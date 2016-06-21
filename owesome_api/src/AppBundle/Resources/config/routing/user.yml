@@ -1,0 +1,4 @@
+api_user_post:
+    path: /users
+    defaults: { _controller: AppBundle:User:postUser, _format: json }
+    methods: [POST]

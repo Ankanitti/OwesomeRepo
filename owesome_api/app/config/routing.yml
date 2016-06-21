@@ -1,0 +1,11 @@
+# app/config/routing.yml
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+AppBundle_ressource:
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix:   /api

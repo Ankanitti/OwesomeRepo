@@ -1,0 +1,31 @@
+# src/AppBundle/Resources/config/routing/transaction.yml
+api_transactions_get:
+    path: /transactions
+    defaults: { _controller: AppBundle:Transaction:getTransactions, _format: json }
+    methods: [GET]
+
+api_transaction_post:
+    path: /transactions
+    defaults: { _controller: AppBundle:Transaction:postTransaction, _format: json }
+    methods: [POST]
+
+api_transaction_put:
+    path: /transactions/{transaction_id}
+    defaults: { _controller: AppBundle:Transaction:putTransaction, _format: json }
+    methods: [PUT]
+    requirements:
+      transaction_id : \d+
+
+api_transaction_delete:
+    path: /transactions/{transaction_id}
+    defaults: { _controller: AppBundle:Transaction:deleteTransaction, _format: json }
+    methods: [DELETE]
+    requirements:
+      transaction_id : \d+
+
+api_transaction_get:
+    path: /transactions/{transaction_id}
+    defaults: { _controller: AppBundle:Transaction:getTransaction, transaction_id : null, _format: json }
+    methods: [GET]
+    requirements:
+      transaction_id : \d+

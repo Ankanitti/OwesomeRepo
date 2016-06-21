@@ -1,0 +1,1051 @@
+// APP STYLES
+body {
+  margin: 0;
+}
+.app {
+  // Override JQM styles
+  .ui-input-text {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid lightgrey !important;
+    text-shadow: none !important;
+    color: white !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    input {
+      font-size: 14px !important;
+    }
+  }
+
+  .ui-link {
+    color: lightgray !important;
+    font-weight: 300 !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    text-shadow: none !important;
+    font-size: 14px;
+  }
+
+  ::-webkit-input-placeholder {
+    color: white !important;
+  }
+
+  .ui-btn {
+    background: darkorange !important;
+    color: white !important;
+    border-radius: 0 !important;
+    border: none !important;
+    text-shadow: none !important;
+    font-weight: 300 !important;
+    margin: 1vh -100vw !important;
+    height: 6vh !important;
+    line-height: 6vh !important;
+  }
+}
+
+////// CUSTOM STYLES //////
+
+.locked {
+  box-shadow: inset 0 0 0 100px rgba(0,0,0,.1);
+  color: grey;
+}
+
+.off {
+  background: rgba(247,179,50,0.3)!important;
+}
+
+// HOMEPAGE STYLES
+#homepage {
+  width: 100vw;
+  height: 100vh;
+  background: url("../img/home-bg.jpeg") center;
+  background-size: cover;
+  // Logo
+  &__logo {
+    height: 50vh;
+    text-align: center;
+    &-img {
+      height: 30vh;
+      margin: 10vh 0;
+      border-radius: 50%;
+    }
+  }
+  // Form
+  &__login {
+    height: 30vh;
+  }
+  // Lost Password
+  &__lost-password {
+    padding: 2vh 0;
+    text-align: right;
+  }
+
+  &__sub {
+    font-size: 14px;
+    text-align: center;
+    padding: 5vh;
+  }
+
+  &__subscribe {
+    &-span {
+      color: white;
+    }
+  }
+}
+
+// SUBSCRIBE PAGE STYLES
+#subscribe {
+  width: 100vw;
+  height: 100vh;
+  background: url("../img/home-bg.jpeg") center;
+  background-size: cover;
+  // header
+  &__header {
+    height: 20vh;
+    padding-top: 5vh;
+    &-btn {
+      width: 8vw;
+      height: 8vw;
+    }
+  }
+  &__title {
+    font-size: 32px;
+    text-shadow: none;
+    font-weight: 300;
+    color: white;
+  }
+  &__sub {
+    height: 60vh;
+  }
+  // Footer
+  &__footer {
+    text-align: center;
+  }
+  // Sub btn
+  .ui-btn {
+    margin: 5vh -100vw !important;
+  }
+  .ui-input-text {
+    margin: 3vh 0;
+  }
+  &-login-span {
+    color: white;
+  }
+}
+
+// HUB PAGE STYLES
+#hub {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  // Header
+  &__header {
+    background: url("../img/FnB.jpg") center;
+    background-size: cover;
+    height: 50vh;
+    padding: 1em;
+    padding-top: 6vh;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+    &-btn {
+      width: 8vw;
+      height: 8vw;
+    }
+    &-img {
+      position: absolute;
+      height: 40vw;
+      width: 40vw;
+      border-radius: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  // Title
+  &__title {
+    font-size: 32px;
+    text-shadow: none;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    margin-top: 2vh;
+  }
+
+  .ui-btn {
+    margin: 6vh 5vw !important;
+  }
+
+  .ui-content {
+    padding: 0 !important;
+  }
+}
+
+// NEW-EVENT PAGE STYLES
+#new-event {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  // header
+  &__header {
+    background: url("../img/FnB.jpg") center;
+    background-size: cover;
+    height: 35vh;
+    padding: 1em;
+    padding-top: 6vh;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+    &-btn {
+      width: 8vw;
+      height: 8vw;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-size: 25px;
+    text-shadow: none;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    margin-top: 5vh;
+    &:after {
+      content:"";
+      width: 20vw;
+      position: absolute;
+      border: 1px solid white;
+      bottom: -5vh;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__create-form {
+    margin-top: 5vh;
+  }
+
+  .ui-input-text {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid gray !important;
+    text-shadow: none !important;
+    color: darkgray !important;
+    input {
+      font-size: 14px !important;
+      padding: 3vh 0 1vh 50px !important;
+    }
+  }
+
+  ::-webkit-input-placeholder {
+    color: black !important;
+  }
+
+  .ui-content {
+    padding: 0 !important;
+  }
+
+  .ui-btn {
+    margin: 10vh 5vw !important;
+  }
+}
+
+// MY-EVENTS PAGE STYLES
+#my-events {
+  width: 100vw;
+  //height: 100vh;
+  background: lightgray;
+  &__header {
+    background: url("../img/bar.png") center;
+    background-size: cover;
+    height: 35vh;
+    padding: 1em;
+    padding-top: 6vh;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+    &-btn {
+      width: 8vw;
+      height: 8vw;
+    }
+  }
+  &__title {
+    position: relative;
+    font-size: 2em;
+    text-shadow: none;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    margin-top: 5vh;
+  }
+
+  .ui-content {
+    padding: 0 !important;
+  }
+
+  #events-container {
+    white-space: normal;
+    overflow-y: scroll;
+    position: relative;
+    width: 100vw;
+    text-align: center;
+    height: 50vh;
+  }
+
+  .my-events__event {
+    display: inline-flex;
+    width: 48vw;
+    height: 48vw;
+    color: black;
+    background: white;
+    border-left: 2px solid lightgrey;
+    border-right: 2px solid lightgrey;
+    position: relative;
+    .event {
+      &_info {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    .event_name {
+      font-size: 20px;
+      color: black;
+      font-weight: 100;
+    }
+    .event_date {
+      font-size: 15px;
+      color: lightgray;
+      font-weight: 100;
+    }
+  }
+}
+
+// BILL PAGE STYLES
+#bill {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  // header
+  &__header {
+    background: url("../img/restaurant-449952.jpg") center;
+    background-size: cover;
+    height: 25vh;
+    padding: 1em;
+    padding-top: 6vh;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+    &-btn {
+      width: 8vw;
+      height: 8vw;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-size: 25px;
+    text-shadow: none;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    margin-top: 5vh;
+    &:after {
+      content:"";
+      width: 20vw;
+      position: absolute;
+      border: 1px solid white;
+      bottom: -5vh;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__sub {
+    font-size: 13px;
+    text-shadow: none;
+    font-weight: 300;
+    color: lightgrey;
+    text-align: left;
+    padding: 2vh ;
+    border-bottom: 1px solid lightgray !important;
+  }
+
+  &__text {
+    font-size: 18px;
+    text-shadow: none;
+    font-weight: 300;
+    color: black;
+    text-align: center;
+    padding: 5vh 0;
+
+  }
+
+  .ui-input-text {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid gray !important;
+    margin: 5vh 20vh;
+    text-shadow: none !important;
+    color: darkgray !important;
+
+    input {
+      font-size: 14px !important;
+      text-align: center;
+
+    }
+  }
+
+  .ui-btn {
+    margin: 10vh 5vw !important;
+  }
+
+  .ui-content {
+    padding: 0 !important;
+  }
+
+  &__montant {
+    &:before {
+      content:'€';
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+// TRANSACTIONS PAGE STYLES
+#transactions{
+  width: 100vw;
+  height: 100vh;
+  background: white;
+
+  // header
+  &__header {
+    background: url("../img/bar.png") center;
+    background-size: cover;
+    height: 25vh;
+    padding: 1em;
+    padding-top: 6vh;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+    &-btn {
+      width: 8vw;
+      height: 8vw;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-size: 25px;
+    text-shadow: none;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    margin-top: 5vh;
+    &:after {
+      content:"";
+      width: 20vw;
+      position: absolute;
+      border: 1px solid white;
+      bottom: -5vh;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__sub {
+    font-size: 15px;
+    text-shadow: none;
+    font-weight: 300;
+    color: grey;
+    text-align: center;
+    padding: 2vh;
+  }
+
+
+  &__collect {
+    font-size: 15px;
+    text-shadow: none;
+    font-weight: 300;
+    color: grey;
+    text-align: center;
+    padding: 2vh;
+  }
+
+  .ui-input-text {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid gray !important;
+    margin: 5vh 20vh;
+    text-shadow: none !important;
+    color: darkgray !important;
+    input {
+      font-size: 14px !important;
+      padding: 1vh 0 1vh 50px !important;
+    }
+  }
+
+  .ui-btn {
+    margin: 10vh 5vw !important;
+  }
+
+  .ui-content {
+    padding: 0 !important;
+  }
+
+}
+.transactions{
+
+  &__text {
+    font-size: 13px;
+    text-shadow: none;
+    font-weight: 300;
+    color: lightgrey;
+    text-align: center;
+    padding: 2vh 0;
+    border-bottom: 1px solid lightgray !important;
+  }
+}
+
+
+// SHARING PAGE STYLES
+#sharing{
+  width: 100vw;
+  height: 100vh;
+  background: white;
+
+  // header
+  &__header {
+    background: url("../img/bar.png") center;
+    background-size: cover;
+    height: 25vh;
+    padding: 1em;
+    padding-top: 6vh;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+    &-btn {
+      width: 8vw;
+      height: 8vw;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-size: 25px;
+    text-shadow: none;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    margin-top: 5vh;
+    &:after {
+      content:"";
+      width: 20vw;
+      position: absolute;
+      border: 1px solid white;
+      bottom: -5vh;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__sub {
+    font-size: 15px;
+    text-shadow: none;
+    font-weight: 300;
+    color: grey;
+    text-align: center;
+    padding: 2vh;
+  }
+
+
+  &__collect {
+    font-size: 15px;
+    text-shadow: none;
+    font-weight: 300;
+    color: grey;
+    text-align: center;
+    padding: 2vh;
+  }
+
+
+  .ui-input-text {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid gray !important;
+    margin: 5vh 20vh;
+    text-shadow: none !important;
+    color: darkgray !important;
+    input {
+      font-size: 14px !important;
+      padding: 1vh 0 1vh 50px !important;
+    }
+  }
+
+  .ui-btn {
+    margin: 5vh 0 !important;
+    height: 10vh !important;
+    display: none;
+  }
+
+  .ui-content {
+    padding: 0 !important;
+  }
+
+  .sharing{
+    &__text {
+      font-size: 13px;
+      text-shadow: none;
+      font-weight: 300;
+      color: lightgrey;
+      text-align: center;
+      padding: 2vh 0;
+      border-bottom: 1px solid lightgray !important;
+    }
+  }
+
+  .lockitlock{
+    background: url('../img/lock.png') no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 48%;
+    left: 7%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    display: none;
+  }
+  .lockit {
+    background: url('../img/lockopen.png') no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 48%;
+    left: 7%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+  }
+
+}
+// SHARING ADDITIONAL STYLES
+#sharing {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+
+  .event-details {
+    padding: 2vh;
+    color: grey;
+    margin: 0;
+    background: #efefef;
+    text-shadow: none;
+    font-weight: 100;
+    font-size: 15px;
+  }
+
+  .sharing-profile {
+    position: relative;
+    height: 10vh;
+    padding-left: 25vw;
+    line-height: 10vh;
+    border-bottom: 1px solid lightgray;
+    p {
+      width: 75vw;
+      margin: 0;
+    }
+  }
+
+  .owed-sum {
+    position: absolute;
+    right: 16vw;
+    top: 0;
+  }
+
+  .plus-sum {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 28vw;
+    background: orange;
+    height: 4vh;
+    width: 4vh;
+    border-radius: 50%;
+    line-height: 55px;
+    font-size: 16px;
+    &:before {
+      content: '+';
+      position: absolute;
+      color: white;
+      top: 45%;
+      font-size: 21px;
+      transform: translate(-50%,-50%);
+      left: 50%;
+    }
+  }
+  .minus-sum {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5vw;
+    background: orange;
+    height: 4vh;
+    width: 4vh;
+    border-radius: 50%;
+    line-height: 55px;
+    font-size: 21px;
+    &:before {
+      content: '-';
+      position: absolute;
+      color: white;
+      top: 40%;
+      font-size: 27px;
+      transform: translate(-50%,-50%);
+      left: 50%;
+    }
+  }
+}
+
+
+
+// SPLASH SCREEN
+
+.splash {
+  text-align: center;
+  &__logo-img {
+    position: absolute;
+    height: 20vw;
+    width: 20vw;
+    border-radius: 50%;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%);
+  }
+}
+
+// INVITE PAGE STYLES
+#invite {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+
+  .event-details {
+    padding: 2vh;
+    color: grey;
+    margin: 0;
+    background: #efefef;
+    text-shadow: none;
+    font-weight: 100;
+    font-size: 12px;
+  }
+  // header
+  &__header {
+    background: url("../img/beers.png") center;
+    background-size: cover;
+    height: 25vh;
+    padding: 1em;
+    padding-top: 6vh;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+    &-btn {
+      width: 8vw;
+      height: 8vw;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-size: 25px;
+    text-shadow: none;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    margin-top: 5vh;
+    &:after {
+      content:"";
+      width: 20vw;
+      position: absolute;
+      border: 1px solid white;
+      bottom: -5vh;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__sub {
+    font-size: 15px;
+    text-shadow: none;
+    font-weight: 300;
+    color: grey;
+    text-align: center;
+    padding: 2vh;
+  }
+
+  .invite-profile {
+    position: relative;
+    height: 10vh;
+    padding-left: 10vw;
+    line-height: 10vh;
+    border-bottom: 1px solid lightgray;
+    p {
+      width: 75vw;
+      margin: 0;
+    }
+  }
+
+
+  &__collect {
+    font-size: 15px;
+    text-shadow: none;
+    font-weight: 300;
+    color: grey;
+    text-align: center;
+    padding: 2vh;
+  }
+
+
+  .ui-input-text {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid gray !important;
+    margin: 5vh 20vh;
+    text-shadow: none !important;
+    color: darkgray !important;
+    input {
+      font-size: 14px !important;
+      padding: 1vh 0 1vh 50px !important;
+    }
+  }
+
+  .ui-btn {
+    margin: 5vh 0!important;
+    height: 10vh !important;
+  }
+
+  .ui-content {
+    padding: 0 !important;
+  }
+}
+
+// CLOSING PAGE STYLES
+#closing {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+
+  // header
+  &__header {
+    background: url("../img/bar.png") center;
+    background-size: cover;
+    height: 25vh;
+    padding: 1em;
+    padding-top: 6vh;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+    &-btn {
+      width: 8vw;
+      height: 8vw;
+    }
+  }
+
+  .settled {
+    background: url('../img/icon-Checkok.png') no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 48%;
+    left: 7%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    display: none;
+  }
+
+  .not-settled {
+    background: url('../img/icon-Checkoff.png') no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 48%;
+    left: 7%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+  }
+
+  &__title {
+    position: relative;
+    font-size: 25px;
+    text-shadow: none;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    margin-top: 5vh;
+    &:after {
+      content:"";
+      width: 20vw;
+      position: absolute;
+      border: 1px solid white;
+      bottom: -5vh;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__sub {
+    font-size: 15px;
+    text-shadow: none;
+    font-weight: 300;
+    color: grey;
+    text-align: center;
+    padding: 2vh;
+  }
+
+
+  &__collect {
+    font-size: 15px;
+    text-shadow: none;
+    font-weight: 300;
+    color: grey;
+    text-align: center;
+    padding: 2vh;
+  }
+
+
+  .ui-input-text {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid gray !important;
+    margin: 5vh 20vh;
+    text-shadow: none !important;
+    color: darkgray !important;
+    input {
+      font-size: 14px !important;
+      padding: 1vh 0 1vh 50px !important;
+    }
+  }
+
+  .ui-btn {
+    margin: 5vh 0 !important;
+    height: 10vh !important;
+    display: none;
+  }
+
+  .ui-content {
+    padding: 0 !important;
+  }
+
+  &__content {
+    overflow-y: scroll;
+    height: 45vh;
+  }
+
+  .closing{
+    &__text {
+      font-size: 13px;
+      text-shadow: none;
+      font-weight: 300;
+      color: lightgrey;
+      text-align: center;
+      padding: 2vh 0;
+      border-bottom: 1px solid lightgray !important;
+    }
+  }
+
+  .lockitlock{
+    background: url('../img/lock.png') no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 48%;
+    left: 7%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    display: none;
+  }
+  .lockit {
+    background: url('../img/lockopen.png') no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 48%;
+    left: 7%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+  }
+
+}
+// SHARING ADDITIONAL STYLES
+#closing {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+
+  .event-details {
+    padding: 2vh;
+    color: grey;
+    margin: 0;
+    background: #efefef;
+    text-shadow: none;
+    font-weight: 100;
+    font-size: 15px;
+  }
+
+  .closing-profile {
+    position: relative;
+    height: 10vh;
+    padding-left: 25vw;
+    line-height: 10vh;
+    border-bottom: 1px solid lightgray;
+    p {
+      width: 75vw;
+      margin: 0;
+    }
+  }
+
+  .owed-sum {
+    position: absolute;
+    right: 16vw;
+    top: 0;
+  }
+}
+
+
+// MENU PANEL
+
+#mypanel{
+  ul{
+    padding-left: 0;
+  }
+
+  li{
+    list-style:none;
+    margin-left:0;
+    padding: 20px 0;
+    border-bottom: solid 1px lightgrey;
+  }
+}
+
+
+
+
+@media ( min-width: 35em ) {
+
+  /* wrap on wide viewports once open */
+
+  .ui-panel-page-content-open.ui-panel-page-content-position-left {
+    margin-right: 17em;
+  }
+  .ui-panel-page-content-open.ui-panel-page-content-position-right {
+    margin-left: 17em;
+  }
+  .ui-panel-page-content-open {
+    width: auto;
+  }
+
+  /* disable "dismiss" on wide viewports */
+  .ui-panel-dismiss {
+    display: none;
+  }
+
+  /* same as the above but for panels with display mode "push" only */
+
+  .ui-panel-page-content-open.ui-panel-page-content-position-left.ui-panel-page-content-display-push {
+    margin-right: 17em;
+  }
+  .ui-panel-page-content-open.ui-panel-page-content-position-right.ui-panel-page-content-display-push {
+    margin-left: 17em;
+  }
+  .ui-panel-page-content-open.ui-panel-page-content-display-push {
+    width: auto;
+  }
+
+  .ui-panel-dismiss-display-push {
+    display: none;
+  }
+}

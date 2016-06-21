@@ -1,0 +1,66 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Participant
+ *
+ * @ORM\Table(name="participant")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ParticipantRepository")
+ */
+class Participant
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="owed", type="float", nullable=true)
+     */
+    private $owed;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set owed
+     *
+     * @param float $owed
+     *
+     * @return Participant
+     */
+    public function setOwed($owed)
+    {
+        $this->owed = $owed;
+
+        return $this;
+    }
+
+    /**
+     * Get owed
+     *
+     * @return float
+     */
+    public function getOwed()
+    {
+        return $this->owed;
+    }
+}
+

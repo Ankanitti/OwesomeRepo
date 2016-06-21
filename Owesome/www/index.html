@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="res/pe-icon-7-stroke/css/pe-icon-7-stroke.css" />
+    <link rel="stylesheet" type="text/css" href="res/pe-icon-7-stroke/css/helper.css" />
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+
+    <title>Owesome</title>
+</head>
+
+<body>
+<div class="app">
+
+
+
+    <!-- SPLASHSCREEN -->
+    <div data-role="page" id="splash" style="background-color: #fff;">
+        <div class="splash">
+            <img src="img/logo.jpg" alt="Logo Owesome Splash" class="splash__logo-img">
+        </div>
+    </div>
+    <!-- END SPLASHSCREEN -->
+
+    <!-- HOME-PAGE START -->
+    <div data-role="page" id="homepage">
+        <div data-role="main" class="ui-content ">
+
+            <div id="homepage__logo">
+                <img src="img/logo.jpg" alt="Logo Owesome" id="homepage__logo-img">
+            </div>
+
+            <div id="homepage__login">
+                <form action="" id="homepage__login-form">
+                    <input type="text" name="username" placeholder="Username" id="homepage__login-form_user">
+                    <input type="password" name="password" placeholder="Password" id="homepage__login-form_pass">
+                    <div id="homepage__lost-password">
+                        <a href="" id="homepage__lost-password-btn">Mot de passe oublié?</a>
+                    </div>
+                    <!--<a href="#hub" id="homepage__login-btn">Se connecter</a>-->
+                    <input type="submit" value="Se connecter" id="homepage__login-btn">
+                </form>
+            </div>
+
+            <div id="homepage__sub">
+                <a href="#subscribe" data-transition="slide" id="homepage__subscribe">Pas de compte? <span id="homepage__subscribe-span">Inscrivez vous</span></a>
+            </div>
+
+        </div>
+    </div>
+    <!-- HOME-PAGE END -->
+
+    <!-- SUBSCRIBE-PAGE START -->
+    <div data-role="page" id="subscribe">
+        <div data-role="main" class="ui-content">
+
+            <div id="subscribe__header">
+                <a href="#homepage" data-transition="slide" data-direction="reverse">
+                    <img src="img/backarrow.png" alt="Return to homepage" id="subscribe__header-btn">
+                </a>
+                <h1 id="subscribe__title">S'inscrire</h1>
+            </div>
+
+            <div id="subscribe__sub">
+                <form action="" id="subscribe__sub-form">
+                    <input type="text" name="username" placeholder="Username" id="sub-form__username">
+                    <input type="text" name="email" placeholder="Email" id="sub-form__email">
+                    <input type="password" name="password" placeholder="Password" id="sub-form__password">
+                    <input type="number" name="phone" placeholder="Phone" id="sub-form__phone">
+
+                    <input type="submit" value="S'inscrire" id="subscribe__login-btn">
+                </form>
+            </div>
+
+            <div id="subscribe__footer">
+                <a href="#homepage" data-transition="slide" data-direction="reverse" id="subscribe-login">Déjà un compte? <span id="subscribe-login-span">Connectez-vous</span></a>
+            </div>
+
+        </div>
+    </div>
+    <!-- SUBSCRIBE-PAGE END -->
+
+    <!-- HUB-PAGE START -->
+    <div data-role="page" id="hub">
+        <div data-role="panel" id="mypanel" data-display="push" class="ui-responsive-panel">
+            <nav class="my-menu">
+                <a href="#" data-rel="close"><i class="pe-7s-close pe-4x"></i></a>
+                <ul>
+                    <li><a href="#hub">Home</a></li>
+                    <li><a href="#My-events">Mes événement</a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <div data-role="main" class="ui-content">
+
+            <div id="hub__header">
+                <a href="#mypanel" data-transition="slide" data-direction="reverse">
+                    <img src="img/burgers.png" alt="Open side menu" class="burger-menu">
+                </a>
+                <h1 id="hub__title">Bienvenue</h1>
+                <img src="img/defaultProfile.png" alt="" id="hub__header-img">
+            </div>
+
+            <div id="hub__content">
+                <a href="#new-event" data-transition="slide" id="hub__content-new" class="ui-btn">
+                    Nouvel événement
+                </a>
+                <a href="#my-events" data-transition="slide" id="hub__content-events" class="ui-btn">
+                    Mes événements
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <!-- HUB-PAGE END -->
+
+    <!-- NEW-EVENT-PAGE START -->
+    <div data-role="page" id="new-event">
+        <div data-role="main" class="ui-content">
+
+            <div id="new-event__header">
+                <a href="#hub" data-transition="slide" data-direction="reverse">
+                    <img src="img/backarrow.png" alt="Return to hub" class="burger-menu">
+                </a>
+                <h1 id="new-event__title">Créer votre événement</h1>
+            </div>
+
+            <div id="new-event__content">
+                <form action="" id="new-event__create-form">
+                    <input type="text" name="name" placeholder="Nom de l'événement" id="new-event__name">
+                    <input type="date" name="date" placeholder="Date de l'événement" id="new-event__date">
+                    <input type="text" name="address" placeholder="Adresse de l'événement" id="new-event__address">
+                    <input type="submit" value="Suivant" id="new-event__btn">
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <!-- NEW-EVENT-PAGE END -->
+
+    <!-- MY-EVENTS-PAGE START -->
+    <div data-role="page" id="my-events">
+        <div data-role="main" class="ui-content">
+            <div id="my-events__header">
+                <a href="#hub" data-transition="slide" data-direction="reverse">
+                    <img src="img/backarrow.png" alt="Return to hub" class="burger-menu">
+                </a>
+                <h1 id="my-events__title">Mes événements</h1>
+            </div>
+
+            <div id="events-container">
+                <div id="my-events__content">
+                    <!-- EVENTS GO IN HERE -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MY-EVENTS-PAGE END -->
+
+    <!-- INVITE - PAGE START -->
+    <div data-role="page" id="invite">
+        <div data-role="panel" id="mypanel" data-display="push" class="ui-responsive-panel">
+            <nav class="my-menu">
+                <a href="#" data-rel="close"><i class="pe-7s-close pe-4x"></i></a>
+                <ul>
+                    <li><a href="#hub">Home</a></li>
+                    <li><a href="#My-events">Mes événements</a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <div data-role="main" class="ui-content">
+
+            <div id="invite__header">
+                <a href="#mypanel" data-transition="slide" data-direction="reverse">
+                    <img src="img/burgers.png" alt="Return to hub" id="invite__header-btn">
+                </a>
+                <h1 id="invite__title">Ajouter vos amis</h1>
+            </div>
+            <div id="invite__content">
+                <div class="invite__event-details">
+
+                </div>
+
+            </div>
+            <button id="invite__validate">Valider l'événement</button>
+        </div>
+    </div>
+    <!-- INVITE-PAGE END -->
+
+    <!-- BILL-PAGE START -->
+    <div data-role="page" id="bill">
+        <div data-role="main" class="ui-content">
+            <div id="bill__header">
+                <a href="#my-events" data-transition="slide" data-direction="reverse">
+                    <img src="img/backarrow.png" alt="Return to hub" id="bill__header-btn">
+                </a>
+                <h1 id="bill__title">Demander le paiement</h1>
+            </div>
+            <div id="bill__content">
+                <p id="bill__sub"></p>
+                <form action="" id="bill__content-form">
+                    <p id="bill__text" data-event-id="">Entrer le montant de la facture</p>
+                    <input type="number" name="total" placeholder="Montant de la facture" id="bill__montant">
+                    <input type="submit" value="Suivant" id="bill__submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- BILL-PAGE END -->
+
+    <!-- TRANSACTIONS-PAGE START -->
+    <div data-role="page" id="transactions" class="transactions">
+        <div data-role="main" class="ui-content">
+
+            <div id="transactions__header">
+                <a href="#bill" data-transition="slide" data-direction="reverse">
+                    <img src="img/backarrow.png" alt="Return to hub" id="transactions__header-btn">
+                </a>
+                <h1 id="transactions__title">Liste des paiements de vos amis</h1>
+            </div>
+            <div id="transactions__content">
+                <p class="transactions__text">Vérifiez que vos amis ont tous payé avant de cloturer la table </p>
+                <form action="" id="transactions__form">
+                    <p id="transactions__collect"> Vous avez collecté montant_collecte sur montant_total </p>
+                    <input type="submit" value="Cloturer la table" id="transactions__submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- TRANSACTIONS-PAGE END -->
+
+    <!-- SHARING - PAGE START -->
+    <div data-role="page" id="sharing">
+        <div data-role="main" class="ui-content">
+
+            <div id="sharing__header">
+                <a href="#bill" data-transition="slide" data-direction="reverse" style="display: none">
+                    <img src="img/backarrow.png" alt="Return to hub" id="sharing__header-btn">
+                </a>
+                <h1 id="sharing__title">Partager la facture</h1>
+            </div>
+            <div class="sharing__event-details">
+
+            </div>
+            <div id="sharing__content">
+
+
+            </div>
+            <button id="sharing__validate">Demander le paiement</button>
+        </div>
+    </div>
+    <!-- SHARING-PAGE END -->
+
+    <!-- CLOSING - PAGE START -->
+    <div data-role="page" id="closing">
+        <div data-role="main" class="ui-content">
+
+            <div id="closing__header">
+                <a href="#my-events" data-transition="slide" data-direction="reverse">
+                    <img src="img/backarrow.png" alt="Return to hub" id="closing__header-btn">
+                </a>
+                <h1 id="closing__title">Liste de paiements</h1>
+            </div>
+            <div id="closing__content">
+
+            </div>
+            <button id="closing__validate">Transférer et clôturer</button>
+        </div>
+    </div>
+    <!-- CLOSING -PAGE END -->
+
+
+
+</div>
+
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+
+<script type="text/javascript">
+    app.initialize();
+</script>
+<script type='application/javascript' src='js/fastclick.js'></script>
+<script type='application/javascript'>
+    window.addEventListener('load', function() {
+        new FastClick(document.body);
+    }, false);
+</script>
+</body>
+
+</html>

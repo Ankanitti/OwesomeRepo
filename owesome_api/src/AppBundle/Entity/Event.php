@@ -1,0 +1,305 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Event
+ *
+ * @ORM\Table(name="event")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\EventRepository")
+ */
+class Event
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime")
+     */
+    private $date;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="address", type="string", length=255)
+     */
+    private $address;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="total", type="float", nullable=true)
+     */
+    private $total;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="finished", type="boolean", options={"default":0})
+     */
+    private $finished = 0;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Transaction", mappedBy="event")
+     */
+    private $transactions;
+
+    /**
+     * @var Profile
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Profile")
+     * @ORM\JoinColumn(name="createdBy", referencedColumnName="id", nullable=false)
+     */
+    private $createdBy;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Profile", mappedBy="events")
+     */
+    private $profiles;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Event
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Event
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set address
+     *
+     * @param string $address
+     *
+     * @return Event
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * Set total
+     *
+     * @param float $total
+     *
+     * @return Event
+     */
+    public function setTotal($total)
+    {
+        $this->total = $total;
+
+        return $this;
+    }
+
+    /**
+     * Get total
+     *
+     * @return float
+     */
+    public function getTotal()
+    {
+        return $this->total;
+    }
+
+    /**
+     * Set finished
+     *
+     * @param boolean $finished
+     *
+     * @return Event
+     */
+    public function setFinished($finished)
+    {
+        $this->finished = $finished;
+
+        return $this;
+    }
+
+    /**
+     * Get finished
+     *
+     * @return bool
+     */
+    public function getFinished()
+    {
+        return $this->finished;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->transactions = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add transaction
+     *
+     * @param \AppBundle\Entity\Transaction $transaction
+     *
+     * @return Event
+     */
+    public function addTransaction(\AppBundle\Entity\Transaction $transaction)
+    {
+        $this->transactions[] = $transaction;
+
+        return $this;
+    }
+
+    /**
+     * Remove transaction
+     *
+     * @param \AppBundle\Entity\Transaction $transaction
+     */
+    public function removeTransaction(\AppBundle\Entity\Transaction $transaction)
+    {
+        $this->transactions->removeElement($transaction);
+    }
+
+    /**
+     * Get transactions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTransactions()
+    {
+        return $this->transactions;
+    }
+
+    /**
+     * Set createdBy
+     *
+     * @param \AppBundle\Entity\Profile $createdBy
+     *
+     * @return Event
+     */
+    public function setCreatedBy(\AppBundle\Entity\Profile $createdBy = null)
+    {
+        $this->createdBy = $createdBy;
+
+        return $this;
+    }
+
+    /**
+     * Get createdBy
+     *
+     * @return \AppBundle\Entity\Profile
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
+    }
+
+    /**
+     * Add profile
+     *
+     * @param \AppBundle\Entity\Profile $profile
+     *
+     * @return Event
+     */
+    public function addProfile(\AppBundle\Entity\Profile $profile)
+    {
+        $this->profiles[] = $profile;
+
+        return $this;
+    }
+
+    /**
+     * Remove profile
+     *
+     * @param \AppBundle\Entity\Profile $profile
+     */
+    public function removeProfile(\AppBundle\Entity\Profile $profile)
+    {
+        $this->profiles->removeElement($profile);
+    }
+
+    /**
+     * Get profiles
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProfiles()
+    {
+        return $this->profiles;
+    }
+}

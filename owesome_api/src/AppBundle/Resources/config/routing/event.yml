@@ -1,0 +1,38 @@
+# src/AppBundle/Resources/config/routing/event.yml
+api_events_get:
+    path: /events
+    defaults: { _controller: AppBundle:Event:getEvents, _format: json }
+    methods: [GET]
+
+api_event_post:
+    path: /events
+    defaults: { _controller: AppBundle:Event:postEvent, _format: json }
+    methods: [POST]
+
+api_event_put:
+    path: /events/{event_id}
+    defaults: { _controller: AppBundle:Event:putEvent, _format: json }
+    methods: [PUT]
+    requirements:
+      event_id : \d+
+
+api_event_delete:
+    path: /events/{event_id}
+    defaults: { _controller: AppBundle:Event:deleteEvent, _format: json }
+    methods: [DELETE]
+    requirements:
+      event_id : \d+
+
+api_event_get:
+    path: /events/{event_id}
+    defaults: { _controller: AppBundle:Event:getEvent, event_id : null, _format: json }
+    methods: [GET]
+    requirements:
+      event_id : \d+
+
+api_event_by_profile:
+    path: /eventByProfile/{profile_id}
+    defaults: { _controller: AppBundle:Event:getByProfile, profile_id : null, _format: json }
+    methods: [GET]
+    requirements:
+      profile_id : \d+

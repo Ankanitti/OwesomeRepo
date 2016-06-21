@@ -1,0 +1,32 @@
+# src/AppBundle/Resources/config/routing/profile.yml
+api_profiles_get:
+    path: /profiles
+    defaults: { _controller: AppBundle:Profile:getProfiles, _format: json }
+    methods: [GET]
+
+api_profile_post:
+    path: /profiles
+    defaults: { _controller: AppBundle:Profile:postProfile, _format: json }
+    methods: [POST]
+
+
+api_profile_put:
+    path: /profiles/{profile_id}
+    defaults: { _controller: AppBundle:Profile:putProfile, _format: json }
+    methods: [PUT]
+    requirements:
+      profile_id : \d+
+
+api_profile_delete:
+    path: /profiles/{profile_id}
+    defaults: { _controller: AppBundle:Profile:deleteProfile, _format: json }
+    methods: [DELETE]
+    requirements:
+      profile_id : \d+
+
+api_profile_get:
+    path: /profiles/{profile_id}
+    defaults: { _controller: AppBundle:Profile:getProfile, profile_id : null, _format: json }
+    methods: [GET]
+    requirements:
+      profile_id : \d+

@@ -1,0 +1,11 @@
+profile_ressource:
+  resource: "@AppBundle/Resources/config/routing/profile.yml"
+
+event_ressource:
+  resource: "@AppBundle/Resources/config/routing/event.yml"
+
+transaction_ressource:
+  resource: "@AppBundle/Resources/config/routing/transaction.yml"
+  
+user_ressource:
+  resource: "@AppBundle/Resources/config/routing/user.yml"
